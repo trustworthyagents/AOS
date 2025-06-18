@@ -7,6 +7,7 @@ site_description: >-
 # Repository
 repo_name: trustworthyagents/aos
 repo_url: https://github.com/trustworthyagents/aos
+edit_uri: edit/dev/docs/
 
 # Copyright
 copyright: Copyright &copy; 2025 AOS
@@ -15,10 +16,13 @@ docs_dir: docs
 
 theme:
   name: material
+  logo: assets/logo.png
   features:
     - search.suggest
     # edit this page for each doc page
     - content.action.edit
+    # enable synchronized tabs
+    - content.tabs.link
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
@@ -41,9 +45,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: material/security
-  icon: 
-    logo: material/security
+  favicon: assets/logo.png
 
 plugins:
   - search
@@ -60,6 +62,7 @@ extra:
 
 nav:
   - Trustworthy Agents: README.md
+  - AOS: aos.md
   - Topics:
     - Core concepts: topics/core_concepts.md
     - AOS in Action: topics/AOS_in_action_example.md
@@ -83,6 +86,9 @@ nav:
       - AgBOM with SWID: spec/inspect/extend_swid.md
   - About: about.md
 
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
   # Emojis
   - attr_list
@@ -100,3 +106,6 @@ markdown_extensions:
   # Callouts
   - admonition
   - pymdownx.details
+  # Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
